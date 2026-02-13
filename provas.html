@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área de Provas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(-45deg, #00c6ff, #add8e6, #00bfff, #87cefa);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      color: #007bff;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-weight: bold;
+      color: #333;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Área de Provas</h1>
+    <p>Usuário logado: <span id="usuarioLogado"></span></p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Prova Operador I</h2>
+      <a href="operador1.html" class="btn">Iniciar</a>
+    </div>
+    <div class="card">
+      <h2>Prova Operador II</h2>
+      <a href="operador2.html" class="btn">Iniciar</a>
+    </div>
+    <div class="card">
+      <h2>Prova Operador Especializado</h2>
+      <a href="operador3.html" class="btn">Iniciar</a>
+    </div>
+  </div>
+
+  <script>
+    const nomeUsuario = localStorage.getItem("nomeCadastro");
+    document.getElementById("usuarioLogado").textContent = nomeUsuario ? nomeUsuario : "Convidado";
+  </script>
+</body>
+</html>
