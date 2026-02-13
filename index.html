@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transição</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 800% 800%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: showText 2s ease forwards;
+    }
+
+    @keyframes showText {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .progress-bar {
+      width: 300px;
+      height: 8px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #00c6ff, #007bff);
+      animation: fillBar 3s linear forwards;
+    }
+
+    @keyframes fillBar {
+      to { width: 100%; }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao Time de Treinamento e Desenvolvimento</h1>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    // Redireciona automaticamente após 3 segundos
+    setTimeout(() => {
+      window.location.href = "cadastro.html";
+    }, 3000);
+  </script>
+</body>
+</html>
