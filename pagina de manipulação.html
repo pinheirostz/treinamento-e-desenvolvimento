@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliações</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 800% 800%;
+      animation: gradientBG 10s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background: rgba(255,255,255,0.9);
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 25;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #007bff;
+      font-size: 2rem;
+    }
+
+    .logoSuperior {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      z-index: 100;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      max-width: 1100px;
+      z-index: 5;
+      position: relative;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Avaliações Operador 1 - Manipulação</h1>
+    <img src="logo.png" alt="Logo Treinamento" class="logoSuperior">
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <h2>LAVADORA DE BINS</h2>
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=15Pj5huXBEu84bo5Z_YN1H0-YrCzLFtFiS9rhHg8AMNUQTA3MU5CTlVGV0dDVDRVMUtYMUlERDlFUS4u" class="btn">Iniciar</a>
+    </div>
+    <div class="card">
+      <h2>CLASSIFICADOR</h2>
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=15Pj5huXBEu84bo5Z_YN1H0-YrCzLFtFiS9rhHg8AMNUQUJTUDMzWUdFRkNaNzkzUDZOVjZJRTA3Ti4u" class="btn">Iniciar</a>
+    </div>
+    <div class="card">
+      <h2>MISTURADOR</h2>
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=15Pj5huXBEu84bo5Z_YN1H0-YrCzLFtFiS9rhHg8AMNUNUdGS0s1M05KTlRVUUtCWFZJSUM4TEk4Ni4u" class="btn">Iniciar</a>
+    </div>
+  </div>
+</body>
+</html>

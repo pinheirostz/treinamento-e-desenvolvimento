@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 800% 800%;
+      animation: gradientBG 10s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    #containerLogin {
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 380px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .inputLogin {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .btnLogin {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btnLogin:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+
+    #mensagemLogin {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .logoSuperior {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      z-index: 200;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo Treinamento" class="logoSuperior">
+
+  <div id="containerLogin">
+    <h1>Login</h1>
+    <form id="formLogin">
+      <input type="email" id="emailLogin" class="inputLogin" placeholder="Email" required>
+      <input type="password" id="senhaLogin" class="inputLogin" placeholder="Senha" required>
+      <button type="submit" class="btnLogin">Entrar</button>
+    </form>
+    <div id="mensagemLogin"></div>
+  </div>
+
+  <script>
+    const formLogin = document.getElementById("formLogin");
+    const mensagemLogin = document.getElementById("mensagemLogin");
+
+    formLogin.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("emailLogin").value;
+      const senha = document.getElementById("senhaLogin").value;
+
+      // Recupera dados do localStorage
+      const emailSalvo = localStorage.getItem("emailCadastro");
+      const senhaSalva = localStorage.getItem("senhaCadastro");
+
+      if (email === emailSalvo && senha === senhaSalva) {
+        mensagemLogin.style.color = "green";
+        mensagemLogin.textContent = "Login realizado com sucesso!";
+        window.location.href = "provas.html";
+      } else {
+        mensagemLogin.style.color = "red";
+        mensagemLogin.textContent = "Email ou senha incorretos!";
+      }
+    });
+  </script>
+</body>
+</html>

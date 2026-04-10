@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 800% 800%;
+      animation: gradientBG 10s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    #containerCadastro {
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 380px;
+      z-index: 10;
+      position: relative;
+    }
+
+    #bemvindoCadastro {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .inputCadastro {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 8px;
+    }
+
+    .btnCadastro {
+      width: 100%; padding: 12px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff; border: none; border-radius: 8px;
+      font-size: 1rem; cursor: pointer;
+    }
+
+    .btnCadastro:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+
+    #mensagemCadastro {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: green;
+    }
+
+    .logoSuperior {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      z-index: 200;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(-50%) scale(0.8); }
+      to { opacity: 1; transform: translateY(-50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo Treinamento" class="logoSuperior">
+
+  <div id="containerCadastro">
+    <div id="bemvindoCadastro">Bem-vindo</div>
+    <h1>Cadastro</h1>
+    <form id="formCadastro">
+      <input type="text" id="idCadastro" class="inputCadastro" placeholder="ID" required>
+      <input type="text" id="nomeCadastro" class="inputCadastro" placeholder="Nome Completo" required>
+      <input type="email" id="emailCadastro" class="inputCadastro" placeholder="Email" required>
+      <input type="password" id="senhaCadastro" class="inputCadastro" placeholder="Senha" required>
+      <button type="submit" class="btnCadastro">Cadastrar</button>
+    </form>
+    <div id="mensagemCadastro"></div>
+    <p>Já tem cadastro? <a href="login.html">Faça login aqui</a></p>
+  </div>
+
+
+  <script>
+    const form = document.getElementById("formCadastro");
+    const mensagem = document.getElementById("mensagemCadastro");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      localStorage.setItem("nomeCadastro", document.getElementById("nomeCadastro").value);
+      localStorage.setItem("emailCadastro", document.getElementById("emailCadastro").value);
+      localStorage.setItem("senhaCadastro", document.getElementById("senhaCadastro").value);
+      localStorage.setItem("cargoCadastro", "NOVAMED"); // fixa NOVAMED
+
+      mensagem.textContent = "Cadastro NOVAMED realizado com sucesso!";
+      setTimeout(() => { window.location.href = "area_provas.html"; }, 1500);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+  </script>
+</body>
+</html>
+

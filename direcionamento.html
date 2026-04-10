@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página SENAI e NOVAMED</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;        
+      justify-content: flex-start; 
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+      background-size: 800% 800%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background: rgba(255,255,255,0.9);
+      padding: 35px 45px;
+      display: flex;              
+      justify-content: center;    
+      align-items: center;        
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      z-index: 10;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #007bff;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .logoSuperior {
+      position: absolute;
+      right: 60px;                
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;    
+      align-items: center;        
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 120px;          
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+      position: relative;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    #cardSenai h2 { color: #cc0000; }
+    #cardNovamed h2 { color: #007bff; }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+
+    .cardDialogo {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.95);
+      padding: 10px 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #333;
+      max-width: 220px;
+      animation: aparecer 1s ease forwards;
+    }
+
+    .cardDialogo::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px;
+      border-style: solid;
+      border-color: rgba(255,255,255,0.95) transparent transparent transparent;
+      filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.3));
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateX(-50%) scale(0.8); }
+      to { opacity: 1; transform: translateX(-50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PORTAL DE ACESSOS</h1>
+    <img src="logo.png" alt="Logo Superior" class="logoSuperior">
+  </header>
+
+  <div class="cards">
+    <div class="card" id="cardSenai">
+      <div class="cardDialogo">Este card leva para a página de cadastro do Senai</div>
+      <h2>SENAI</h2>
+      <a href="cadastro senai.html" class="btn">Entrar</a>
+    </div>
+    <div class="card" id="cardNovamed">
+      <div class="cardDialogo">Este card leva para a página de cadastro da Novamed</div>
+      <h2>NOVAMED</h2>
+      <a href="cadastro nvmd.html" class="btn">Entrar</a>
+    </div>
+  </div>
+</body>
+</html>
